@@ -1,0 +1,28 @@
+{
+  "name": "oop_12bha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "npx tsc && node ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LengyelMate0/OOP_12BHA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LengyelMate0/OOP_12BHA/issues"
+  },
+  "homepage": "https://github.com/LengyelMate0/OOP_12BHA#readme",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "@types/typescript": "^0.4.29",
+    "typescript": "^5.9.2"
+  }
+}
