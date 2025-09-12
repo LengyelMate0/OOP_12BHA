@@ -33,9 +33,12 @@ for (let key in statistic){
     console.log(`${key} szám: ${statistic[key]} db`);
 };
 
-function arraySum(num: number){
-    const sum = 0;
-    for (let key in statistic){
-        
-    }
+function arraySum(a: number[]): number{
+    /* let sum = 0;
+    for (let key of statistic){
+        sum += key;
+    return sum;
+    } */
+   return a.reduce((summa, item) => summa + item, 0)
 };
+console.log(arraySum(array));
