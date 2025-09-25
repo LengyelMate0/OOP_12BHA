@@ -1,6 +1,8 @@
+import { log } from "console";
+
 class NumberHandler {
 
-    private _start: number;
+    protected _start: number;
     private _end: number;
     private _count: number;
     private _numbers: number[];
@@ -22,33 +24,17 @@ class NumberHandler {
         return ns;
     };
 
-    const generateNumbers2 = (count: number, start: number, end: number): number[] => (
-        Array.from({ length: count }, item => Math.floor(Math.random() * end) + start)
+    generateNumbers2 = (): number[] => (
+        Array.from({ length: this._count }, item => Math.floor(Math.random() * this._end) + this._start)
     );
-
-    //const array = generateNumbers2(30, 1, 5);
-    //console.log(array.join(", "));
 
     getStatistic(a: Array<number>): Record<number, number> {
         const statistic: Record<number, number> = {};
         for (const key of this._numbers) {
-            /* Az adott kulcs benne van-e az objektumban (rekordban)? 
-            if (key in statistic){
-                statistic[key]! ++;
-            } else{
-                statistic[key] = 1;
-            } */
             statistic[key] = (statistic[key] ?? 0) + 1;
         }
         return statistic;
     }
-
-    //const statistic = getStatistic(array)
-
-   /*  for (let key in statistic) {
-        console.log(`${key} szám: ${statistic[key]} db`);
-    };
- */
 
     print = () => {
       for (let key in this._statistic) console.log(`${key} szám: ${this._statistic[key]} db`);
@@ -78,5 +64,22 @@ class NumberHandler {
         }
         return i + 1;
     };
+
+    static help() {
+        console.log("Ez a program így működik...")
+    } 
 }
 
+// Öröklés
+class ExtendedNumHandler extends NumberHandler{
+    constructor(start: number, end: number, count: number, range:number){
+        super(start, end: number, count: number);
+    }
+}
+
+// Példányosítás, létrejön az objektum:
+const num = new NumberHandler(1, 10, 20);
+NumberHandler.help();
+console.log(num.generateNumbers2());
+console.log(num.getFilteredNums(5));
+const num2 = new ExtendedNumHandler()
